@@ -38,19 +38,6 @@ const Hero = () => {
           </motion.div>
         </AnimatePresence>
       </div>
-
-      {/* Dots Indicator */}
-      <div className="mt-6 flex space-x-2">
-        {news.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`h-3 w-3 rounded-full transition-all ${
-              index === currentIndex ? "bg-blue-500 scale-125" : "bg-gray-400"
-            }`}
-          />
-        ))}
-      </div>
     </div>
   );
 };

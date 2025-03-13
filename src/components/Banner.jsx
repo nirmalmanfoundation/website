@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Link } from "react-router-dom";
-import { bannerData } from '../data';
+import React, { useState, useEffect } from "react";
+import { bannerData } from "../data";
 
 const Banner = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -18,29 +16,31 @@ const Banner = () => {
   };
 
   return (
-    <section className="relative w-full h-screen mt-1 overflow-hidden"> {/* Added mt-16 to ensure spacing below navbar */}
+    <section className="relative w-full h-screen min-h-[60vh] overflow-hidden flex items-center justify-center">
+      {/* Slideshow Container */}
       <div 
         className="flex w-full h-full transition-transform duration-700 ease-in-out"
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
       >
         {bannerData.map((slide) => (
-          <div key={slide.id} className="w-screen h-screen flex-shrink-0 relative">
+          <div key={slide.id} className="w-full h-full flex-shrink-0 relative flex items-center justify-center">
             <img
               src={slide.image}
               alt={slide.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover md:object-contain"
             />
-          
           </div>
         ))}
       </div>
+
+      {/* Dots Navigation */}
       <div className="absolute bottom-8 left-0 right-0 flex justify-center space-x-3">
         {bannerData.map((_, index) => (
           <button
             key={index}
             onClick={() => handleDotClick(index)}
-            className={`h-3 w-3 rounded-full transition-colors duration-300 ${
-              index === currentSlide ? "bg-amber-500 scale-110" : "bg-white/50 hover:bg-white/80"
+            className={`h-3 w-3 rounded-full transition-all duration-300 ${
+              index === currentSlide ? "bg-amber-500 scale-125" : "bg-white/50 hover:bg-white/80"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />

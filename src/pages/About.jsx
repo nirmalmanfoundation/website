@@ -26,7 +26,7 @@ const About = () => {
                 <div className="md:w-1/2 text-center md:text-left">
                     <h1 className="text-4xl font-bold text-gray-800">About Our Organisation</h1>
                     <p className="mt-4 text-lg text-gray-600 text-justify mr-5">
-                        The Nirmal Mann Foundation, established in 2024, is dedicated to promoting inclusivity and uplifting underserved communities. Guided by its mission, "Sabko saath lekar chalne ka pran" (Taking everyone along), the foundation focuses on providing education to underprivileged children, empowering women, protecting the environment, promoting cow welfare, and supporting animal welfare. Its initiatives aim to reach and uplift every section of society that has been left behind, striving for a better and more equitable future.
+                        The Nirmal Mann Foundation, established in 2024, is dedicated to promoting inclusivity and uplifting underserved communities. Guided by its mission, "Sabko saath lekar chalne ka prana" (Taking everyone along), the foundation focuses on providing education to underprivileged children, empowering women, protecting the environment, promoting cow welfare, and supporting animal welfare. Its initiatives aim to reach and uplift every section of society that has been left behind, striving for a better and more equitable future.
                     </p>
                 </div>
 
@@ -53,7 +53,7 @@ const About = () => {
 
 
             {/* Team Members */}
-            <div className="container mx-auto py-12">
+            <div className="container px-6 mx-auto py-12">
                 <h2 className="text-3xl font-semibold text-center text-gray-800 mb-8">Meet Our Team</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                     {members.map((member, index) => (
