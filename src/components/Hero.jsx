@@ -7,7 +7,7 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % news.length);
-    }, 8000); // Slow transition every 8 seconds
+    }, 7000); // Slow transition every 8 seconds
     return () => clearInterval(interval);
   }, []);
 
