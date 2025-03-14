@@ -7,7 +7,7 @@ const Banner = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % bannerData.length);
-    }, 6000);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
@@ -16,7 +16,7 @@ const Banner = () => {
   };
 
   return (
-    <section className="relative w-full min-h-[50vh] md:min-h-[70vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-[50vh] md:min-h-[70vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden ">
       {/* Slideshow Container */}
       <div 
         className="flex w-full h-full transition-transform duration-700 ease-in-out"
