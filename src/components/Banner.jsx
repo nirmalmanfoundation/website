@@ -16,18 +16,18 @@ const Banner = () => {
   };
 
   return (
-    <section className="relative w-full h-screen min-h-[60vh] overflow-hidden flex items-center justify-center">
+    <section className="relative w-full min-h-[50vh] md:min-h-[70vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Slideshow Container */}
       <div 
         className="flex w-full h-full transition-transform duration-700 ease-in-out"
-        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+        style={{ transform: `translateX(-${currentSlide * 100}%)`, width: `${bannerData.length * 100}%` }}
       >
         {bannerData.map((slide) => (
-          <div key={slide.id} className="w-full h-full flex-shrink-0 relative flex items-center justify-center">
+          <div key={slide.id} className="w-full flex-shrink-0 flex justify-center items-center">
             <img
               src={slide.image}
               alt={slide.title}
-              className="w-full h-full object-cover md:object-contain"
+              className="w-full h-auto max-h-[80vh] object-contain"
             />
           </div>
         ))}
