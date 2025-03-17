@@ -32,6 +32,9 @@ const NavBar = () => {
             <Link to="/" className="text-amber-900 hover:text-amber-600 font-semibold">
               Home
             </Link>
+            <Link to="/news" className="text-amber-900 hover:text-amber-600 font-semibold">
+              News
+            </Link>
             <Link to="/about" className="text-amber-900 hover:text-amber-600 font-semibold">
               About Us
             </Link>
@@ -89,6 +92,9 @@ const NavBar = () => {
           <div className="p-3 space-y-2">
             <Link to="/" className="block text-amber-900 hover:text-amber-600 font-medium" onClick={() => setIsOpen(false)}>
               Home
+            </Link>
+            <Link to="/news" className="block text-amber-900 hover:text-amber-600 font-medium" onClick={() => setIsOpen(false)}>
+              News
             </Link>
             <Link to="/about" className="block text-amber-900 hover:text-amber-600 font-medium" onClick={() => setIsOpen(false)}>
               About Us

@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import WhatsAppButton from "./components/WhatsAppButton";
+import News from "./pages/News";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/news" element={<News />} />
       </Routes>
 
       <div className="fixed bottom-6 right-6 z-50 sm:bottom-4 sm:right-4">
