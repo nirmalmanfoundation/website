@@ -1,73 +1,21 @@
 export const bannerData = [
-  {
-    id: 1,
-    image: 'attachments/imagetop.jpg',
-  },
-  {
-    id: 2,
-    image: 'attachments/imagetop2.jpg',
-  },
-  {
-    id: 3,
-    image: 'attachments/main1.jpg',
-  },
-
-  {
-    id: 4,
-    image: 'attachments/main2.jpg',
-  },
-
-  {
-    id: 5,
-    image: 'attachments/main3.jpg',
-  },
-
-  {
-    id: 6,
-    image: 'attachments/sho.jpg',
-  },
-
-  {
-    id: 7,
-    image: 'attachments/image8.jpg',
-  },
-
-  {
-    id: 8,
-    image: 'attachments/image18.jpg',
-  },
-  {
-    id: 9,
-    image: 'attachments/image12.jpg',
-  },
-  {
-    id: 10,
-    image: 'attachments/image10.jpg',
-  },
-  {
-    id: 11,
-    image: 'attachments/image2.jpg',
-  },
-  {
-    id: 12,
-    image: 'attachments/image20.jpg',
-  },
-  {
-    id: 13,
-    image: 'attachments/image15.jpg',
-  },
-  {
-    id: 14,
-    image: 'attachments/image6.jpg',
-  },
-  {
-    id: 15,
-    image: 'attachments/imagegood.jpg',
-  },
-  {
-    id: 16,
-    image: 'attachments/image122.jpg',
-  }
+  {id: 1, image: 'attachments/top.jpg'},
+  { id: 2, image: 'attachments/image1.jpg' },
+  { id: 3, image: 'attachments/image2.jpg' },
+  { id: 4, image: 'attachments/image3.jpg' },
+  { id: 5, image: 'attachments/image4.jpg' },
+  { id: 6, image: 'attachments/image5.jpg' },
+  { id: 7, image: 'attachments/image6.jpg' },
+  { id: 8, image: 'attachments/image7.jpg' },
+  { id: 9, image: 'attachments/image8.jpg' },
+  { id: 10, image: 'attachments/image9.jpg' },
+  { id: 11, image: 'attachments/image10.jpg' },
+  { id: 12, image: 'attachments/image11.jpg' },
+  { id: 13, image: 'attachments/image12.jpg' },
+  { id: 14, image: 'attachments/image13.jpg' },
+  { id: 15, image: 'attachments/image14.jpg' },
+  { id: 16, image: 'attachments/image15.jpg' },
+  { id: 17, image: 'attachments/image16.jpg' }
 ];
 
 export const news = [
@@ -236,30 +184,17 @@ export const news = [
 ];
 
 export const khabar = [
-  {
-    id: 1,
-    image: "khabar/image1.jpg",
-  },
-  {
-    id: 2,
-    image: "khabar/image2.jpg",
-  },
-  {
-    id: 3,
-    image: "khabar/image3.jpg",
-  },
-  {
-    id: 4,
-    image: "khabar/image4.jpg"
-  },
-  {
-    id: 5,
-    image: "khabar/image5.jpg"
-  },
-  {
-    id: 6,
-    image: "khabar/image6.jpg"
-  }
-
-
-]
+  { id: 1, image: "khabar/1.jpg" },
+  { id: 2, image: "khabar/2.jpg" },
+  { id: 3, image: "khabar/3.jpg" },
+  { id: 4, image: "khabar/4.jpg" },
+  { id: 5, image: "khabar/5.jpg" },
+  { id: 6, image: "khabar/6.jpg" },
+  { id: 7, image: "khabar/7.jpg" },
+  { id: 8, image: "khabar/8.jpg" },
+  { id: 9, image: "khabar/9.jpg" },
+  { id: 10, image: "khabar/10.jpg" },
+  { id: 11, image: "khabar/11.jpg" },
+  { id: 12, image: "khabar/12.jpg" }
+ 
+];

@@ -62,8 +62,11 @@ const Footer = () => {
 
           {/* Newsletter */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Newsletter</h3>
-            <p className="text-amber-200 text-sm">Coming Soon...</p>
+            <h3 className="text-lg font-semibold mb-4 text-white">Donation</h3>
+            <p className="text-amber-200 text-sm">NIRMALMANFOUNDATION TRUST<br></br>
+              A/C No: 6951004944<br></br>
+              Kotak Mahindra Bank<br></br>
+              IFSC: KKBK0003549</p>
           </div>
         </div>
 
