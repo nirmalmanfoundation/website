@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 const members = [
-    { name: 'Kailash Ojha', role: 'President', image: 'members/kailashojha.jpg' },
     { name: 'Kamlesh Sharma', role: 'Patron', image: 'members/kamleshkumarsharma.jpg' },
+    { name: 'Kailash Ojha', role: 'President', image: 'members/kailashojha.jpg' },
     { name: 'Rahul Saini', role: 'Vice President', image: 'members/rahulsaini.jpg' },
     { name: 'Roshan Jha', role: 'Treasurer', image: 'members/roshanjha.jpg' },
     { name: 'Kavita Jha', role: 'Secretary', image: 'members/kavitajha.jpg' },
