@@ -17,7 +17,7 @@ const QR = () => {
 
                 {/* QR Code with UPI Link */}
                 <a
-                    href="upi://pay?pa=0793549A0225226.bqr@kotak&pn=Nirmal%Man&am=100&cu=INR"
+                    href="upi://pay?pa=0793549A0225226.bqr@kotak&pn=Nirmal%20Name%20Donation&cu=INR"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
