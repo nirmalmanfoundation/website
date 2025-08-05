@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Gallery = () => {
     // Dynamically generate image paths
-    const totalImages = 70; // Replace with the actual number of images in your "gallery" folder
+    const totalImages = 100; // Replace with the actual number of images in your "gallery" folder
     const images = Array.from({ length: totalImages }, (_, index) => `gallery/image${index + 1}.jpg`);
 
     return (
