@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { khabar } from "../data";
+import { khabar } from "../data/data";
 import { motion, AnimatePresence } from "framer-motion";
 
 const News = () => {

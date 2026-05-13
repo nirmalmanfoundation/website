@@ -5,16 +5,26 @@ import Team from "../components/Team";
 import VideoSection from "../components/VideoSection";
 import QR from "../components/QR";
 
+const Divider = () => (
+  <div className="w-full flex items-center justify-center py-8 opacity-60">
+    <div className="w-1/3 h-px bg-gradient-to-r from-transparent to-[#C9A84C]"></div>
+    <span className="text-[#C9A84C] mx-4 text-2xl font-['Yatra_One',_cursive]">ॐ</span>
+    <div className="w-1/3 h-px bg-gradient-to-l from-transparent to-[#C9A84C]"></div>
+  </div>
+);
+
 const Home = () => {
   return (
-    <div className="w-full bg-red-200">
-      <QR />
-      <Team/>
+    <div className="w-full bg-[#FDF6EC]">
       <Banner />
-      <div className="mt-5 w-full h-10 bg-yellow-300"></div>
-      <VideoSection/>
-      {/* <div className="mt-5 w-full h-10 bg-yellow-300"></div> */}
+      <Divider />
       <Hero />
+      <Divider />
+      <QR />
+      <Divider />
+      <VideoSection />
+      <Divider />
+      <Team />
     </div>
   );
 };

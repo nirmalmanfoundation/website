@@ -1,114 +1,76 @@
 import { useRef } from "react";
-const videos = [
-  {
-    id: 1,
-    title: "Our Mission in Action",
-    url: "https://www.youtube.com/embed/SKyfzbbKcyg?si=UmsGvID4rhqetKmw",
-  },
-  {
-    id: 2,
-    title: "Volunteer Testimonials",
-    url: "https://www.youtube.com/embed/E8oN3D-WEfo?si=4nPYRdos42LsIP4_",
-  },
-  {
-    id: 3,
-    title: "Food Drive Highlights",
-    url: "https://www.youtube.com/embed/Uh1PKqtZZRo?si=EDbX5sNQ-5RmX4-J",
-  },
-  {
-    id: 4,
-    title: "Food Drive Highlights",
-    url: "https://www.youtube.com/embed/ry-AsQFd0uQ?si=A-DAYpwOewW-0w2v",
-  },
-  {
-    id: 5,
-    title: "Food Drive Highlights",
-    url: "https://www.youtube.com/embed/ry-AsQFd0uQ?si=A-DAYpwOewW-0w2v",
-  },
-  {
-    id: 6,
-    title: "Food Drive Highlights",
-    url: "https://www.youtube.com/embed/ry-AsQFd0uQ?si=A-DAYpwOewW-0w2v",
-  },
-];
+import { videos } from "../data/ytdata";
 
 const VideoSection = () => {
   const containerRef = useRef();
 
   const scroll = (direction) => {
     const container = containerRef.current;
-    const scrollAmount = container.offsetWidth * 0.95;
-    container.scrollBy({
-      left: direction === "left" ? -scrollAmount : scrollAmount,
-      behavior: "smooth",
-    });
+    const scrollAmount = container.offsetWidth * 0.8;
+    container.scrollBy({ left: direction === "left" ? -scrollAmount : scrollAmount, behavior: "smooth" });
   };
 
   return (
-    <section className="bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto text-center mb-10">
-        <h2 className="text-3xl sm:text-4xl font-bold text-amber-900 mb-2">
-          Watch Our Work
+    <section className="py-16 px-4 bg-[#FDF6EC]">
+      <div className="max-w-7xl mx-auto text-center mb-12">
+        <h2 className="text-4xl md:text-5xl font-['Yatra_One',_cursive] text-[#800020]">
+          Witness Our Journey
         </h2>
-        <p className="text-gray-700 text-sm sm:text-base">
-          See how we're impacting lives through real stories and events
-        </p>
+        <div className="w-24 h-1 bg-[#C9A84C] mx-auto mt-4 rounded-full"></div>
       </div>
 
-      <div className="relative">
+      <div className="relative max-w-7xl mx-auto group">
         <button
           onClick={() => scroll("left")}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md hover:shadow-lg p-2 rounded-full"
+          className="absolute -left-4 md:-left-6 top-1/2 -translate-y-1/2 z-10 bg-[#FF9933] text-white p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-[#800020]"
+          aria-label="Scroll left"
         >
-          <svg
-            className="w-6 h-6 text-amber-800"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-          </svg>
+          &larr;
         </button>
 
         <div
           ref={containerRef}
-          className="h-full flex space-x-6 overflow-x-auto pb-4 px-8 scroll-smooth hide-scrollbar"
+          className="flex space-x-6 overflow-x-auto pb-8 px-4 scroll-smooth hide-scrollbar snap-x snap-mandatory"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
-          {videos.map((video) => (
-            <div
-              key={video.id}
-              className="flex-shrink-0 w-[90vw] sm:w-[80vw] md:w-[400px] bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300"
+          {videos.map((vid) => (
+            <a
+              key={vid.id}
+              href={vid.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 w-[85vw] sm:w-[60vw] md:w-[400px] snap-center bg-white rounded-xl shadow-lg border border-[#C9A84C]/20 overflow-hidden transform transition hover:-translate-y-1 group"
             >
-              <div className="w-full aspect-video overflow-hidden rounded-t-xl">
-                <iframe
-                  className="w-full h-full rounded-t-xl"
-                  src={video.url}
-                  title={video.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
+              <div className="relative w-full aspect-video border-b border-[#C9A84C]/20">
+                {/* Thumbnail */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${vid.thumbnail})` }}
+                ></div>
+
+                {/* Custom play button */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-16 h-16 md:w-20 md:h-20 bg-[#FF9933]/90 rounded-full flex items-center justify-center group-hover:bg-[#800020]/90 transition-colors">
+                    <div className="w-0 h-0 border-l-8 border-l-white border-t-6 border-b-6 border-t-transparent border-b-transparent ml-1"></div>
+                  </div>
+                </div>
               </div>
-              <div className="p-4">
-                <h3 className="text-md font-semibold text-gray-800">{video.title}</h3>
+
+              <div className="p-5 bg-white">
+                <h3 className="text-xl font-bold text-[#800020] mb-2 font-['Crimson_Pro',_serif]">
+                  {vid.title}
+                </h3>
               </div>
-            </div>
+            </a>
           ))}
         </div>
 
         <button
           onClick={() => scroll("right")}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md hover:shadow-lg p-2 rounded-full"
+          className="absolute -right-4 md:-right-6 top-1/2 -translate-y-1/2 z-10 bg-[#FF9933] text-white p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-[#800020]"
+          aria-label="Scroll right"
         >
-          <svg
-            className="w-6 h-6 text-amber-800"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
+          &rarr;
         </button>
       </div>
     </section>

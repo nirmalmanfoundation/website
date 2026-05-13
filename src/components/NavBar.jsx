@@ -5,106 +5,94 @@ const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  // Handle scroll to add shadow and shrink navbar/logo
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "News", path: "/news" },
+    { name: "About Us", path: "/about" },
+    { name: "Gallery", path: "/gallery" },
+    { name: "Contact", path: "/contact" },
+  ];
 
   return (
     <nav
-      className={`sticky top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-md" : "bg-white/80"
+      className={`sticky top-0 w-full z-50 transition-all duration-300 border-b-[3px] border-[#C9A84C] ${scrolled ? "bg-[#FDF6EC] shadow-md py-2" : "bg-[#FDF6EC]/95 py-4"
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <Link to="/">
-            <img className="h-16" src="/logofinal.png" alt="NGO Logo" />
+        <div className="flex justify-between items-center">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-3">
+            <span className="block">
+              <img
+                src="logofinal.png"
+                alt="Logo"
+                className={`transition-all duration-300 object-contain w-auto ${scrolled ? "h-10 sm:h-8" : "h-12 sm:h-10"
+                  }`}
+              />
+            </span>
           </Link>
-
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-6">
-            <Link to="/" className="text-amber-900 hover:text-amber-600 font-semibold">
-              Home
-            </Link>
-            <Link to="/news" className="text-amber-900 hover:text-amber-600 font-semibold">
-              News
-            </Link>
-            <Link to="/about" className="text-amber-900 hover:text-amber-600 font-semibold">
-              About Us
-            </Link>
-            <Link to="/gallery" className="text-amber-900 hover:text-amber-600 font-semibold">
-              Gallery
-            </Link>
-            <Link to="/contact" className="text-amber-900 hover:text-amber-600 font-semibold">
-              Contact
-            </Link>
+          <div className="hidden md:flex space-x-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.path}
+                className="text-[#800020] font-semibold text-lg hover:text-[#FF9933] transition-colors duration-300 relative group"
+              >
+                {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#FF9933] transition-all group-hover:w-full"></span>
+              </Link>
+            ))}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-amber-900 hover:text-amber-600 focus:outline-none"
+            className="md:hidden text-[#800020] hover:text-[#FF9933] focus:outline-none"
+            aria-label="Toggle menu"
           >
-            {isOpen ? (
-              <svg
-                className="h-6 w-6 ml-2"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            ) : (
-              <svg
-                className="h-6 w-6 ml-2"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            )}
+            <svg
+              className="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d={
+                  isOpen
+                    ? "M6 18L18 6M6 6l12 12"
+                    : "M4 6h16M4 12h16M4 18h16"
+                }
+              />
+            </svg>
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="md:hidden bg-white shadow-md absolute w-full left-0 top-20 z-50">
-          <div className="p-3 space-y-2">
-            <Link to="/" className="block text-amber-900 hover:text-amber-600 font-medium" onClick={() => setIsOpen(false)}>
-              Home
-            </Link>
-            <Link to="/news" className="block text-amber-900 hover:text-amber-600 font-medium" onClick={() => setIsOpen(false)}>
-              News
-            </Link>
-            <Link to="/about" className="block text-amber-900 hover:text-amber-600 font-medium" onClick={() => setIsOpen(false)}>
-              About Us
-            </Link>
-            <Link to="/gallery" className="block text-amber-900 hover:text-amber-600 font-medium" onClick={() => setIsOpen(false)}>
-              Gallery
-            </Link>
-            <Link to="/contact" className="block text-amber-900 hover:text-amber-600 font-medium" onClick={() => setIsOpen(false)}>
-              Contact
-            </Link>
+        <div className="md:hidden bg-[#FDF6EC] border-t border-[#C9A84C] shadow-lg absolute w-full left-0 top-full z-50">
+          <div className="flex flex-col px-4 py-4 space-y-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.path}
+                className="text-[#800020] font-medium text-lg hover:text-[#FF9933] transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
           </div>
         </div>
       )}

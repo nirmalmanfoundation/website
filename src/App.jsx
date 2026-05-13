@@ -11,30 +11,22 @@ import News from "./pages/News";
 
 function App() {
   return (
-    <Router>
-      <NavBar />
-
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <div className="w-full">
-              <Home />
-            </div>
-          }
-        />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/news" element={<News />} />
-      </Routes>
-
-      <div className="fixed bottom-6 right-6 z-50 sm:bottom-4 sm:right-4">
+    <div className="min-h-screen bg-[#FDF6EC] font-['Crimson_Pro',_serif] text-gray-800 antialiased selection:bg-[#FF9933] selection:text-white">
+      <Router>
+        <NavBar />
+        <main className="w-full">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/news" element={<News />} />
+          </Routes>
+        </main>
         <WhatsAppButton />
-      </div>
-
-      <Footer />
-    </Router>
+        <Footer />
+      </Router>
+    </div>
   );
 }
 
