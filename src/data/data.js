@@ -184,17 +184,25 @@ export const news = [
 ];
 
 export const khabar = [
-  { id: 1, image: "khabar/1.jpg" },
-  { id: 2, image: "khabar/2.jpg" },
-  { id: 3, image: "khabar/3.jpg" },
-  { id: 4, image: "khabar/4.jpg" },
-  { id: 5, image: "khabar/5.jpg" },
-  { id: 6, image: "khabar/6.jpg" },
-  { id: 7, image: "khabar/7.jpg" },
-  { id: 8, image: "khabar/8.jpg" },
-  { id: 9, image: "khabar/9.jpg" },
-  { id: 10, image: "khabar/10.jpg" },
-  { id: 11, image: "khabar/11.jpg" },
-  { id: 12, image: "khabar/12.jpg" }
+
+  { id: 1, image: "khabar/image1.jpeg" },
+  { id: 2, image: "khabar/image2.jpeg" },
+  { id: 3, image: "khabar/image3.jpeg" },
+  { id: 4, image: "khabar/image4.jpeg" },
+  { id: 5, image: "khabar/image5.jpeg" },
+  { id: 6, image: "khabar/image6.jpeg" },
+  { id: 7, image: "khabar/image7.jpg" },
+  { id: 8, image: "khabar/image8.jpg" },
+  { id: 9, image: "khabar/image9.jpg" },
+  { id: 10, image: "khabar/image10.jpg" },
+  { id: 11, image: "khabar/image11.jpg" },
+  { id: 12, image: "khabar/image12.jpg" },
+  { id: 13, image: "khabar/image13.jpg" },
+  { id: 14, image: "khabar/image14.jpg" },
+  { id: 15, image: "khabar/image15.jpg" },
+  { id: 16, image: "khabar/image16.jpg" },
+  { id: 17, image: "khabar/image17.jpg" },
+  { id: 18, image: "khabar/image18.jpg" }
+
  
 ];
