@@ -4,8 +4,9 @@ import { motion } from 'framer-motion';
 const Gallery = () => {
     // Add an 'imageCount' property to each section/subsection
     const eventSections = [
+        { id: 1, title: "Blood Donation Drive 2026", path: "blood_donation2026", imageCount: 15 },
         { 
-            id: 1, 
+            id: 2, 
             title: "Darshan Yatra", 
             isNested: true,
             subsections: [
@@ -14,13 +15,13 @@ const Gallery = () => {
                 { title: "Khatu Shyam", path: "darshan_yatra/khatu_shyam", imageCount: 10 }
             ]
         },
-        { id: 2, title: "Blood Donation Drive", path: "blood_donation", imageCount: 33 }, 
-        { id: 3, title: "Chhat Puja", path: "chhat", imageCount: 2 },
-        { id: 4, title: "Gau Seva", path: "gau_seva", imageCount: 3 },
-        { id: 5, title: "Kambal Vitaran", path: "kambal_vitaran", imageCount: 14 },
-        { id: 6, title: "Pakshi Sanrakshan", path: "pakshi_sanrakshan", imageCount: 6 },
-        { id: 7, title: "Samagri Vitaran", path: "samagri_vitaran", imageCount: 5 },
-        { id: 8, title: "Others", path: "others", imageCount: 5 }
+        { id: 3, title: "Blood Donation Drive", path: "blood_donation", imageCount: 33 }, 
+        { id: 4, title: "Chhat Puja", path: "chhat", imageCount: 2 },
+        { id: 5, title: "Gau Seva", path: "gau_seva", imageCount: 3 },
+        { id: 6, title: "Kambal Vitaran", path: "kambal_vitaran", imageCount: 14 },
+        { id: 7, title: "Pakshi Sanrakshan", path: "pakshi_sanrakshan", imageCount: 6 },
+        { id: 8, title: "Samagri Vitaran", path: "samagri_vitaran", imageCount: 5 },
+        { id: 9, title: "Others", path: "others", imageCount: 5 }
     ];
 
     // Handles fallback if a .jpg fails, swapping it dynamically to .jpeg
@@ -55,7 +56,7 @@ const Gallery = () => {
                         <img 
                             src={image} 
                             alt={`${altTitle} - ${index + 1}`} 
-                            className="w-full h-64 object-cover"
+                            className="w-full h-64 object-contain bg-gray-100"
                             onError={handleImageError} // Re-routes to .jpeg seamlessly if .jpg fails
                         />
                     </motion.div>
