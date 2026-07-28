@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const Gallery = () => {
     // Add an 'imageCount' property to each section/subsection
     const eventSections = [
-        { id: 1, title: "Blood Donation Drive 2026", path: "blood_donation2026", imageCount: 15 },
+        { id: 1, title: "Blood Donation Drive 2026", path: "blood_donation2026", imageCount: 32 },
         { 
             id: 2, 
             title: "Darshan Yatra", 
