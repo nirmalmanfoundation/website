@@ -1,80 +1,39 @@
 import { useRef } from "react";
+import { Play, ChevronLeft, ChevronRight, Youtube } from "lucide-react";
 import { videos } from "../data/ytdata";
+import { SectionHeading, Reveal } from "./ui";
 
-const VideoSection = () => {
-  const containerRef = useRef();
-
-  const scroll = (direction) => {
-    const container = containerRef.current;
-    const scrollAmount = container.offsetWidth * 0.8;
-    container.scrollBy({ left: direction === "left" ? -scrollAmount : scrollAmount, behavior: "smooth" });
-  };
-
+export default function VideoSection() {
+  const ref = useRef(null);
+  const go = (d) => { const el = ref.current; if(!el) return; el.scrollBy({ left: d * el.clientWidth * 0.8, behavior: "smooth" }); };
   return (
-    <section className="py-16 px-4 bg-[#FDF6EC]">
-      <div className="max-w-7xl mx-auto text-center mb-12">
-        <h2 className="text-4xl md:text-5xl font-['Yatra_One',_cursive] text-[#800020]">
-          Witness Our Journey
-        </h2>
-        <div className="w-24 h-1 bg-[#C9A84C] mx-auto mt-4 rounded-full"></div>
-      </div>
-
-      <div className="relative max-w-7xl mx-auto group">
-        <button
-          onClick={() => scroll("left")}
-          className="absolute -left-4 md:-left-6 top-1/2 -translate-y-1/2 z-10 bg-[#FF9933] text-white p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-[#800020]"
-          aria-label="Scroll left"
-        >
-          &larr;
-        </button>
-
-        <div
-          ref={containerRef}
-          className="flex space-x-6 overflow-x-auto pb-8 px-4 scroll-smooth hide-scrollbar snap-x snap-mandatory"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        >
-          {videos.map((vid) => (
-            <a
-              key={vid.id}
-              href={vid.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-shrink-0 w-[85vw] sm:w-[60vw] md:w-[400px] snap-center bg-white rounded-xl shadow-lg border border-[#C9A84C]/20 overflow-hidden transform transition hover:-translate-y-1 group"
-            >
-              <div className="relative w-full aspect-video border-b border-[#C9A84C]/20">
-                {/* Thumbnail */}
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: `url(${vid.thumbnail})` }}
-                ></div>
-
-                {/* Custom play button */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 md:w-20 md:h-20 bg-[#FF9933]/90 rounded-full flex items-center justify-center group-hover:bg-[#800020]/90 transition-colors">
-                    <div className="w-0 h-0 border-l-8 border-l-white border-t-6 border-b-6 border-t-transparent border-b-transparent ml-1"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-5 bg-white">
-                <h3 className="text-xl font-bold text-[#800020] mb-2 font-['Crimson_Pro',_serif]">
-                  {vid.title}
-                </h3>
-              </div>
-            </a>
-          ))}
+    <section className="bg-cream-50 py-20 sm:py-24">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <SectionHeading eyebrow="Witness Our Journey" title="Stories in motion" hindi="झलकियाँ" description="Glimpses from blood camps, yatra buses, blanket nights and gau-shala mornings." />
+        <div className="group relative mt-12">
+          <div className="pointer-events-none absolute -left-3 top-1/2 z-10 hidden -translate-y-1/2 md:block">
+            <button onClick={()=>go(-1)} aria-label="scroll left" className="grid h-12 w-12 place-items-center rounded-full bg-maroon-700 text-cream-50 opacity-0 shadow-xl transition group-hover:opacity-100 hover:bg-maroon-800"><ChevronLeft/></button>
+          </div>
+          <div ref={ref} className="hide-scrollbar flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-2">
+            {videos.map((v,i)=>(
+              <Reveal key={v.id} delay={Math.min(i*0.05,0.3)} className="w-[86vw] shrink-0 snap-center sm:w-[420px]">
+                <a href={v.url} target="_blank" rel="noreferrer" className="group/card block overflow-hidden rounded-3xl border border-gold-500/25 bg-white shadow-card transition hover:-translate-y-1.5 hover:shadow-soft">
+                  <span className="relative block aspect-video overflow-hidden">
+                    <img src={v.thumbnail} alt={v.title} loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover/card:scale-105" />
+                    <span className="absolute inset-0 bg-gradient-to-t from-maroon-950/60 to-transparent" />
+                    <span className="absolute inset-0 grid place-items-center"><span className="grid h-16 w-16 place-items-center rounded-full bg-saffron-500 text-maroon-950 shadow-glow transition group-hover/card:scale-110"><Play fill="currentColor"/></span></span>
+                    <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-black/55 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-white backdrop-blur"><Youtube size={13}/> YouTube</span>
+                  </span>
+                  <span className="block p-5"><span className="block font-display text-xl leading-snug text-maroon-700">{v.title}</span><span className="mt-1 block text-sm text-stone-500">Nirmal Man Foundation • Seva diary</span></span>
+                </a>
+              </Reveal>
+            ))}
+          </div>
+          <div className="pointer-events-none absolute -right-3 top-1/2 z-10 hidden -translate-y-1/2 md:block">
+            <button onClick={()=>go(1)} aria-label="scroll right" className="grid h-12 w-12 place-items-center rounded-full bg-maroon-700 text-cream-50 opacity-0 shadow-xl transition group-hover:opacity-100 hover:bg-maroon-800"><ChevronRight/></button>
+          </div>
         </div>
-
-        <button
-          onClick={() => scroll("right")}
-          className="absolute -right-4 md:-right-6 top-1/2 -translate-y-1/2 z-10 bg-[#FF9933] text-white p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-[#800020]"
-          aria-label="Scroll right"
-        >
-          &rarr;
-        </button>
       </div>
     </section>
   );
-};
-
-export default VideoSection;
+}

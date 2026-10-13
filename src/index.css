@@ -1,1 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Yatra+One&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Tiro+Devanagari+Hindi&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --color-cream-50: #FFFBF3;
+  --color-cream-100: #FDF6EC;
+  --color-cream-200: #F8EAD0;
+  --color-cream-300: #F1D9AE;
+
+  --color-maroon-50: #FDF0F2;
+  --color-maroon-100: #F8D9DE;
+  --color-maroon-600: #A91A3A;
+  --color-maroon-700: #800020;
+  --color-maroon-800: #5E0018;
+  --color-maroon-900: #420010;
+  --color-maroon-950: #2A000A;
+
+  --color-saffron-50: #FFF6E9;
+  --color-saffron-100: #FFEAD0;
+  --color-saffron-400: #FFB25E;
+  --color-saffron-500: #FF9933;
+  --color-saffron-600: #E87D0D;
+  --color-saffron-700: #B85F00;
+
+  --color-gold-100: #F7ECCF;
+  --color-gold-200: #EDDBA8;
+  --color-gold-300: #E2C87E;
+  --color-gold-400: #D8B65E;
+  --color-gold-500: #C9A84C;
+  --color-gold-600: #A98834;
+  --color-gold-700: #7E6525;
+
+  --color-leaf-500: #2D6A4F;
+  --color-leaf-600: #245A42;
+
+  --font-display: "Yatra One", "Tiro Devanagari Hindi", system-ui, cursive;
+  --font-serif: "Fraunces", "Crimson Pro", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-hindi: "Tiro Devanagari Hindi", "Yatra One", serif;
+
+  --shadow-soft: 0 20px 60px -20px rgba(128, 0, 32, 0.25);
+  --shadow-card: 0 10px 40px -12px rgba(66, 0, 16, 0.18);
+  --shadow-glow: 0 0 0 6px rgba(255, 153, 51, 0.18), 0 12px 40px rgba(255, 153, 51, 0.35);
+
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-spin-slow: spin 24s linear infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream-100);
+  color: #2b2118;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-saffron-500);
+  color: white;
+}
+
+::-webkit-scrollbar { width: 11px; }
+::-webkit-scrollbar-track { background: #f6ead1; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #800020, #c9a84c);
+  border-radius: 20px;
+  border: 2px solid #f6ead1;
+}
+
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { scrollbar-width: none; }
+
+/* subtle jaali / texture pattern */
+.pattern-jaali {
+  background-image: radial-gradient(rgba(201,168,76,0.22) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+}
+.pattern-jaali-dark {
+  background-image: radial-gradient(rgba(255,255,255,0.09) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+}
+.texture-paper {
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(255,153,51,0.12), transparent 55%),
+    radial-gradient(ellipse at 85% 20%, rgba(201,168,76,0.16), transparent 55%),
+    radial-gradient(ellipse at 50% 100%, rgba(128,0,32,0.06), transparent 60%);
+}
+
+.gold-frame {
+  position: relative;
+}
+.gold-frame::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(201,168,76,0.55);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.text-balance { text-wrap: balance; }
+
+/* elegant link underline */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  transition: background-size 0.35s ease;
+  padding-bottom: 2px;
+}
+.link-underline:hover, .link-underline.active {
+  background-size: 100% 2px;
+}

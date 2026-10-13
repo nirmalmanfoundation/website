@@ -206,3 +206,30 @@ export const khabar = [
 
  
 ];
+
+export const sevas = [
+  { id: "blood", title: "Rakt Daan", hindi: "रक्तदान — महादान", description: "Mega blood donation camps across Jaipur with hospitals & youth groups. Every drop saves a life.", image: "/gallery/blood_donation2026/image1.jpeg", stat: "1000+ units", tag: "Health" },
+  { id: "gau", title: "Gau Seva", hindi: "गौ सेवा", description: "Fodder, shelter & medical care for Gau Mata — honouring her with weekly seva and special drives.", image: "/gallery/gau_seva/image1.jpg", stat: "Weekly seva", tag: "Animals" },
+  { id: "kambal", title: "Kambal Vitaran", hindi: "कंबल वितरण", description: "Winter blankets & warm clothes for footpath families, elders and night workers.", image: "/gallery/kambal_vitaran/image1.jpg", stat: "Winter mission", tag: "Care" },
+  { id: "annadan", title: "Annadan & Samagri", hindi: "अन्नदान", description: "Ration kits, cooked meals & festival samagri for widows, labour families and slum clusters.", image: "/gallery/samagri_vitaran/image1.jpg", stat: "500+ families", tag: "Food" },
+  { id: "pakshi", title: "Pakshi Sanrakshan", hindi: "पक्षी संरक्षण", description: "Parinda water pots, grain & rescue for birds through Rajasthan's harsh summers.", image: "/gallery/pakshi_sanrakshan/image1.jpg", stat: "Summer drive", tag: "Nature" },
+  { id: "yatra", title: "Darshan Yatra", hindi: "दर्शन यात्रा", description: "Sawariya Seth, Khatu Shyam & Kumbh yatras for elders and devotees who dream of darshan.", image: "/gallery/darshan_yatra/khatu_shyam/image1.jpg", stat: "Bhakti + seva", tag: "Culture" },
+];
+
+export const teamMembers = [
+  { name: 'Kamlesh Sharma', role: 'Patron', image: 'members/kamleshkumarsharma.jpg' },
+  { name: 'Kailash Ojha', role: 'President & Founder', image: 'members/kailashojha.jpg' },
+  { name: 'Rahul Saini', role: 'Vice President', image: 'members/rahulsaini.jpg' },
+  { name: 'Roshan Jha', role: 'Treasurer', image: 'members/roshanjha.jpg' },
+  { name: 'Kavita Jha', role: 'Secretary', image: 'members/kavitajha.jpg' },
+  { name: 'Jitendra Chaudhary', role: 'Joint Secretary', image: 'members/jitendrachaudhry.jpg' },
+  { name: 'Jaivir Singh', role: 'General Secretary', image: 'members/jaivirsingh.jpg' },
+  { name: 'Harpal Singh', role: 'Organisation Minister', image: 'members/harpalsingh.jpg' }
+];
+
+export const impactStats = [
+  { value: "27+", label: "Seva verticals" },
+  { value: "1000+", label: "Blood units" },
+  { value: "500+", label: "Families / month" },
+  { value: "8", label: "Trust pillars" },
+];
